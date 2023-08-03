@@ -1,0 +1,8 @@
+prefix=/home/user/Projects/ROS_WORKSPACES/robotenv_ws/install
+
+Name: phoxi_camera
+Description: Description of phoxi_camera
+Version: 2.0.0
+Cflags: -I${prefix}/include -I/opt/Photoneo/PhoXiControl-1.4.1/API/include
+Libs: -L${prefix}/lib -lphoxi_camera_PhoXi_Interface -lphoxi_camera_Ros_Interface
+Requires: roscpp message_runtime std_msgs sensor_msgs pcl_ros dynamic_reconfigure diagnostic_updater geometry_msgs cv_bridge eigen_conversions

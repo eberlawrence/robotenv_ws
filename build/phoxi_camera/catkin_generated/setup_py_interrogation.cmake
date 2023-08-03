@@ -1,0 +1,7 @@
+set(phoxi_camera_SETUP_PY_SETUP_MODULE "distutils.core")
+set(phoxi_camera_SETUP_PY_VERSION "2.0.0")
+set(phoxi_camera_SETUP_PY_SCRIPTS "")
+set(phoxi_camera_SETUP_PY_PACKAGES "interfaces")
+set(phoxi_camera_SETUP_PY_PACKAGE_DIRS "test/interfaces")
+set(phoxi_camera_SETUP_PY_MODULES "")
+set(phoxi_camera_SETUP_PY_MODULE_DIRS "")

@@ -49,14 +49,14 @@
     <joint name="Room_to_SafetyAndController_joint" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <axis xyz="0 0 1"/>
-      <parent link="RoomComponents"/>
       <child link="SafetyAndControllerComponents"/>
+      <parent link="RoomComponents"/>
     </joint>
     <joint name="Room_to_ConveyorAndSupport_joint" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <axis xyz="0 0 1"/>
-      <parent link="RoomComponents"/>
       <child link="ConveyorAndSupportComponents"/>
+      <parent link="RoomComponents"/>
     </joint>
     <!-- end of joint list -->
   </xacro:macro>

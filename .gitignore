@@ -19,8 +19,8 @@
 !spec/*.dae
 **/*.dae
 
-*.stl
-!spec/*.stl
-**/*.stl
+# *.stl
+# !spec/*.stl
+# **/*.stl
 
 extra_files/

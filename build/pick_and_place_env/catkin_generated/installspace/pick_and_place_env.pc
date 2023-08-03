@@ -1,0 +1,8 @@
+prefix=/home/user/Projects/ROS_WORKSPACES/robotenv_ws/install
+
+Name: pick_and_place_env
+Description: Description of pick_and_place_env
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

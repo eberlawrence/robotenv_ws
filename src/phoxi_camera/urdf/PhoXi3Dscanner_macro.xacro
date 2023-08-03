@@ -10,13 +10,14 @@
         <geometry>
           <mesh filename="package://phoxi_camera/meshes/visual/PhoXi3DScannerS.dae" scale = "0.01 0.01 0.01"/>
         </geometry>
-      <origin xyz="0 0 0" rpy="${pi/2} 0 ${-pi}"/>
+        <origin xyz="0 0 0" rpy="${pi/2} 0 ${-pi}"/>
       </visual>
       <collision>
         <!-- <origin xyz="0 0 0" rpy="0 1.5707 0" /> -->
         <geometry>
           <mesh filename="package://phoxi_camera/meshes/collision/PhoXi3DScannerSCollision.stl" scale = "0.001 0.001 0.001"/>
         </geometry>
+        <origin xyz="0 0 0" rpy="${pi/2} 0 ${-pi}"/>
         <xacro:collision_colour />
       </collision>
     </link>
@@ -29,8 +30,8 @@
     <!-- joint list -->
     <joint name="camera_support_to_PhoXi3Dscanner_joint" type="fixed">
       <origin xyz="0.555 -0.384 1.3815" rpy="0 0 0"/>
-      <parent link="ConveyorAndSupportComponents"/>
       <child link="PhoXi3Dscanner"/>
+      <parent link="ConveyorAndSupportComponents"/>
     </joint>
 
     <!-- Sensor joint when using the "CameraSpace" coordinate system ***NEEDS ADJUSTMENTS*** -->
@@ -43,8 +44,8 @@
     <!-- Sensor joint when using the "MakerSpace" coordinate system -->
     <joint name="PhoXi3Dscanner_to_PhoXi3Dscanner_sensor_MarkerSpace_joint" type="fixed">
       <origin xyz="0.135 -0.0378 -0.5425" rpy="0 0 0" />
-      <parent link="PhoXi3Dscanner"/>
       <child link="PhoXi3Dscanner_sensor"/>
+      <parent link="PhoXi3Dscanner"/>
     </joint>
     <!-- end of joint list -->
   </xacro:macro>

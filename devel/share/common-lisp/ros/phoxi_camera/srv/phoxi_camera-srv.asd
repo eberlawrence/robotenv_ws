@@ -1,0 +1,33 @@
+
+(cl:in-package :asdf)
+
+(defsystem "phoxi_camera-srv"
+  :depends-on (:roslisp-msg-protocol :roslisp-utils :geometry_msgs-msg
+               :phoxi_camera-msg
+)
+  :components ((:file "_package")
+    (:file "ConnectCamera" :depends-on ("_package_ConnectCamera"))
+    (:file "_package_ConnectCamera" :depends-on ("_package"))
+    (:file "GetBool" :depends-on ("_package_GetBool"))
+    (:file "_package_GetBool" :depends-on ("_package"))
+    (:file "GetDeviceList" :depends-on ("_package_GetDeviceList"))
+    (:file "_package_GetDeviceList" :depends-on ("_package"))
+    (:file "GetFrame" :depends-on ("_package_GetFrame"))
+    (:file "_package_GetFrame" :depends-on ("_package"))
+    (:file "GetHardwareIdentification" :depends-on ("_package_GetHardwareIdentification"))
+    (:file "_package_GetHardwareIdentification" :depends-on ("_package"))
+    (:file "GetString" :depends-on ("_package_GetString"))
+    (:file "_package_GetString" :depends-on ("_package"))
+    (:file "GetSupportedCapturingModes" :depends-on ("_package_GetSupportedCapturingModes"))
+    (:file "_package_GetSupportedCapturingModes" :depends-on ("_package"))
+    (:file "SaveFrame" :depends-on ("_package_SaveFrame"))
+    (:file "_package_SaveFrame" :depends-on ("_package"))
+    (:file "SaveLastFrame" :depends-on ("_package_SaveLastFrame"))
+    (:file "_package_SaveLastFrame" :depends-on ("_package"))
+    (:file "SetCoordinatesSpace" :depends-on ("_package_SetCoordinatesSpace"))
+    (:file "_package_SetCoordinatesSpace" :depends-on ("_package"))
+    (:file "SetTransformationMatrix" :depends-on ("_package_SetTransformationMatrix"))
+    (:file "_package_SetTransformationMatrix" :depends-on ("_package"))
+    (:file "TriggerImage" :depends-on ("_package_TriggerImage"))
+    (:file "_package_TriggerImage" :depends-on ("_package"))
+  ))

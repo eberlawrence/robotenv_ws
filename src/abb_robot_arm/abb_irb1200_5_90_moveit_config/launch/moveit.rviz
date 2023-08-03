@@ -4,10 +4,7 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /MotionPlanning1
-        - /MotionPlanning1/Scene Robot1
-        - /MotionPlanning1/Planning Request1
-        - /TF1
+        - /MotionPlanning1/Status1
         - /TF1/Frames1
       Splitter Ratio: 0.5170649886131287
     Tree Height: 416
@@ -41,7 +38,7 @@ Visualization Manager:
         Z: 0
       Plane: XY
       Plane Cell Count: 10
-      Reference Frame: ConveyorAndSupportComponents
+      Reference Frame: <Fixed Frame>
       Value: true
     - Acceleration_Scaling_Factor: 1
       Class: moveit_rviz_plugin/MotionPlanning
@@ -176,7 +173,7 @@ Visualization Manager:
         Interactive Marker Size: 0
         Joint Violation Color: 255; 0; 255
         Planning Group: robotic_arm
-        Query Goal State: false
+        Query Goal State: true
         Query Start State: false
         Show Workspace: false
         Start State Alpha: 1
@@ -278,7 +275,7 @@ Visualization Manager:
             Show Trail: false
         Robot Alpha: 0.699999988079071
         Show Robot Collision: false
-        Show Robot Visual: false
+        Show Robot Visual: true
       Value: true
       Velocity_Scaling_Factor: 1
     - Alpha: 1
@@ -447,7 +444,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.5510244369506836
+      Distance: 6.197732925415039
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -455,17 +452,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.5511584281921387
-        Y: -0.2666344940662384
-        Z: -0.3184574246406555
+        X: 0.8618231415748596
+        Y: 0.2452201396226883
+        Z: 0.0957142561674118
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5347951650619507
+      Pitch: 0.5597954988479614
       Target Frame: base_link
-      Yaw: 4.116820335388184
+      Yaw: 4.1850080490112305
     Saved: ~
 Window Geometry:
   Displays:
@@ -483,5 +480,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1920
-  X: 1920
+  X: 0
   Y: 27

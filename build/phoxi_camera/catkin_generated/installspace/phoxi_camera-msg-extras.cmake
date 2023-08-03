@@ -1,0 +1,2 @@
+set(phoxi_camera_MESSAGE_FILES "msg/PhoXiSize.msg;msg/DeviceConnectionStatus.msg;msg/DeviceType.msg;msg/DeviceInformation.msg;msg/PosOriObjectsArray.msg")
+set(phoxi_camera_SERVICE_FILES "srv/Deprecated/Empty.srv;srv/Deprecated/IsConnected.srv;srv/Deprecated/IsAcquiring.srv;srv/ConnectCamera.srv;srv/TriggerImage.srv;srv/GetDeviceList.srv;srv/GetBool.srv;srv/GetFrame.srv;srv/GetHardwareIdentification.srv;srv/GetSupportedCapturingModes.srv;srv/SaveFrame.srv;srv/SaveLastFrame.srv;srv/SetCoordinatesSpace.srv;srv/SetTransformationMatrix.srv;srv/GetString.srv")

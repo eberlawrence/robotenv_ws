@@ -1,0 +1,22 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~resolution" : \b [int] A size parameter which is edited via an enum min: 0, default: 1, max: 1
+- \b "~scan_multiplier" : \b [int] Scan multiplier min: 1, default: 1, max: 50
+- \b "~shutter_multiplier" : \b [int] Shutter multiplier min: 1, default: 1, max: 20
+- \b "~trigger_mode" : \b [int] Trigger_mode. min: 0, default: 1, max: 1
+- \b "~start_acquisition" : \b [bool] Start acquisition min: False, default: True, max: True
+- \b "~timeout" : \b [int] A size parameter which is edited via an enum min: -3, default: -3, max: 0
+- \b "~confidence" : \b [double] A double parameter min: 0.0, default: 3.0, max: 10.0
+- \b "~send_point_cloud" : \b [bool] Send point cloud. min: False, default: True, max: True
+- \b "~send_normal_map" : \b [bool] Send normal map. min: False, default: True, max: True
+- \b "~send_confidence_map" : \b [bool] Send confidence map min: False, default: True, max: True
+- \b "~send_texture" : \b [bool] Send texture min: False, default: True, max: True
+- \b "~send_depth_map" : \b [bool] Send depth map min: False, default: True, max: True
+- \b "~coordinate_space" : \b [int] Coordinate space which is edited via an enum. Only for PhoXi Control 1.2 and higher. min: 1, default: 1, max: 5
+- \b "~organized_cloud" : \b [bool] Send organized cloud (if true). min: False, default: True, max: True
+- \b "~ambient_light_suppression" : \b [bool] Ambient Light Suppression. Only for PhoXi Control 1.2 and higher. min: False, default: False, max: True
+- \b "~single_pattern_exposure" : \b [int] Single Pattern Exposure. Only for PhoXi Control 1.2 and higher. min: 0, default: 2, max: 11
+- \b "~camera_only_mode" : \b [bool] With this mode you can use the scanner internal camera to capture only 2D images of the scene. Only for PhoXi Control 1.2 and higher. min: False, default: False, max: True
+

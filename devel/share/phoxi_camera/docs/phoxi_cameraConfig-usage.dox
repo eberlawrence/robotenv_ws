@@ -1,0 +1,23 @@
+\subsubsection usage Usage
+\verbatim
+<node name="phoxi_camera_node" pkg="phoxi_camera" type="phoxi_camera_node">
+  <param name="resolution" type="int" value="1" />
+  <param name="scan_multiplier" type="int" value="1" />
+  <param name="shutter_multiplier" type="int" value="1" />
+  <param name="trigger_mode" type="int" value="1" />
+  <param name="start_acquisition" type="bool" value="True" />
+  <param name="timeout" type="int" value="-3" />
+  <param name="confidence" type="double" value="3.0" />
+  <param name="send_point_cloud" type="bool" value="True" />
+  <param name="send_normal_map" type="bool" value="True" />
+  <param name="send_confidence_map" type="bool" value="True" />
+  <param name="send_texture" type="bool" value="True" />
+  <param name="send_depth_map" type="bool" value="True" />
+  <param name="coordinate_space" type="int" value="1" />
+  <param name="organized_cloud" type="bool" value="True" />
+  <param name="ambient_light_suppression" type="bool" value="False" />
+  <param name="single_pattern_exposure" type="int" value="2" />
+  <param name="camera_only_mode" type="bool" value="False" />
+</node>
+\endverbatim
+
