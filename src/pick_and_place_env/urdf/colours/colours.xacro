@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find pick_and_place_env)/urdf/colours/colour_names.xacro"/>
+  <xacro:macro name="colour_black">
+    <material name="">
+      <color rgba="${c_black}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_blue">
+    <material name="">
+      <color rgba="${c_blue}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_green">
+    <material name="">
+      <color rgba="${c_green}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_dark_green">
+    <material name="">
+      <color rgba="${c_dark_green}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_light_blue">
+    <material name="">
+      <color rgba="${c_light_blue}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_red">
+    <material name="">
+      <color rgba="${c_red}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_pink">
+    <material name="">
+      <color rgba="${c_pink}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_yellow">
+    <material name="">
+      <color rgba="${c_yellow}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_white">
+    <material name="">
+      <color rgba="${c_white}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_orange">
+    <material name="">
+      <color rgba="${c_orange}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_light_yellow">
+    <material name="">
+      <color rgba="${c_light_yellow}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_light_green">
+    <material name="">
+      <color rgba="${c_light_green}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_gray_10p">
+    <material name="">
+      <color rgba="${c_gray_10p}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_gray_20p">
+    <material name="">
+      <color rgba="${c_gray_20p}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_gray_30p">
+    <material name="">
+      <color rgba="${c_gray_30p}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_gray_40p">
+    <material name="">
+      <color rgba="${c_gray_40p}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_gray_40p">
+    <material name="">
+      <color rgba="${c_gray_40p}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_gray_50p">
+    <material name="">
+      <color rgba="${c_gray_50p}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_gray_60p">
+    <material name="">
+      <color rgba="${c_gray_60p}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_gray_70p">
+    <material name="">
+      <color rgba="${c_gray_70p}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_gray_80p">
+    <material name="">
+      <color rgba="${c_gray_80p}"/>
+    </material>
+  </xacro:macro>
+  <xacro:macro name="colour_gray_90p">
+    <material name="">
+      <color rgba="${c_gray_90p}"/>
+    </material>
+  </xacro:macro>
+</robot>

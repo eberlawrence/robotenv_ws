@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find pick_and_place_env)/urdf/colours/specific_colours.xacro"/>
+  <xacro:macro name = "Fixed_parts">
+    <!-- link list -->
+    <link name="RoomComponents">
+      <visual>
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/visual/RoomComponents.dae" scale = "0.01 0.01 0.01"/>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/collision/RoomComponentCollision.stl" scale = "0.001 0.001 0.001"/>
+        </geometry>
+        <xacro:collision_colour />
+      </collision>
+    </link>
+    <link name="SafetyAndControllerComponents">
+      <visual>
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/visual/SafetyAndControllerComponents.dae" scale = "0.01 0.01 0.01"/>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/collision/SafetyAndControllerCollision.stl" scale = "0.001 0.001 0.001"/>
+        </geometry>
+        <xacro:collision_colour />
+      </collision>
+    </link>
+    <link name="ConveyorAndSupportComponents">
+      <visual>
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/visual/ConveyorAndSupportComponents.dae" scale = "0.01 0.01 0.01"/>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/collision/ConveyorAndSupportCollision.stl" scale = "0.001 0.001 0.001"/>
+        </geometry>
+        <xacro:collision_colour />
+      </collision>
+    </link>
+    <!-- end of link list -->
+    <!--  -->
+    <!--  -->
+    <!-- joint list -->
+    <joint name="Room_to_SafetyAndController_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <parent link="RoomComponents"/>
+      <child link="SafetyAndControllerComponents"/>
+    </joint>
+    <joint name="Room_to_ConveyorAndSupport_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <parent link="RoomComponents"/>
+      <child link="ConveyorAndSupportComponents"/>
+    </joint>
+    <!-- end of joint list -->
+  </xacro:macro>
+</robot>

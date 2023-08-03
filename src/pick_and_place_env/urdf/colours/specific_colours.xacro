@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--                !!!Predefined colours!!!                 -->
+<!--   "c_white"         "c_black"         "c_dark_green" 
+       "c_orange"        "c_green"         "c_light_green"   
+       "c_red"           "c_yellow"        "c_light_yellow"    
+       "c_pink"          "c_blue"          "c_light_blue"
+       "c_gray_10p"      "c_gray_20p"      "c_gray_30p"    
+       "c_gray_40p"      "c_gray_50p"      "c_gray_60p"    
+       "c_gray_70p"      "c_gray_80p"      "c_gray_90p"      -->
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find pick_and_place_env)/urdf/colours/colour_names.xacro"/>
+  <xacro:macro name="collision_colour">
+    <material name="">
+      <color rgba="${c_red}"/>
+    </material>
+  </xacro:macro>
+</robot>

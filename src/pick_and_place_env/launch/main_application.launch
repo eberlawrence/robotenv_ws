@@ -1,0 +1,10 @@
+<launch>
+
+  <node pkg="pick_and_place_env" type="conv_sensor_signal_pub" name="conv_sensor_state_publisher" output="screen" />
+  <node pkg="pick_and_place_env" type="conv_state_sub" name="conv_state_subscriber" output="screen" />
+
+
+  <node pkg="pick_and_place_env" type="conv_sensor_signal_sub.py" name="sensor_value_subscriber" output="screen" />
+  <node pkg="pick_and_place_env" type="main_script.py" name="main_app_node" output="screen" />
+
+</launch>

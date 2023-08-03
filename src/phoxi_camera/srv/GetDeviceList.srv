@@ -1,0 +1,6 @@
+---
+int64 len
+string[] out
+phoxi_camera/DeviceInformation[] device_information_list
+string message
+bool success

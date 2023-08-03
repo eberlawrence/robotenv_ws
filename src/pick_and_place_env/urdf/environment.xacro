@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="abb_irb1200_5_90" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find pick_and_place_env)/urdf/Fixed_parts_macro.xacro"/>
+  <xacro:Fixed_parts/>
+
+  <xacro:include filename="$(find abb_irb1200_support)/urdf/irb1200_5_90_macro.xacro"/>
+  <xacro:abb_irb1200_5_90 />
+
+  <!-- <xacro:include filename="$(find pick_and_place_env)/urdf/two_finger_gripper_macro.xacro"/>
+  <xacro:two_finger_gripper /> -->
+
+  <xacro:include filename="$(find pick_and_place_env)/urdf/calibration_tool_macro.xacro"/>
+  <xacro:calibration_tool />
+  
+  <xacro:include filename="$(find phoxi_camera)/urdf/PhoXi3Dscanner_macro.xacro"/>
+  <xacro:PhoXi3Dscanner />
+
+</robot>

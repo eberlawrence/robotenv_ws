@@ -1,0 +1,40 @@
+<launch>
+    <rosparam command="load" file="$(find abb_irb1200_support)/config/joint_names_irb1200_5_90.yaml" />
+
+    <!-- Use industrial robot simulator instead of real robot -->
+    <arg name="sim" default="false" />
+
+    <!-- If sim=false, a robot_ip argument is required -->
+    <!-- IP of controller (only required if not using industrial simulator -->
+    <arg name="robot_ip" default="192.168.23.6" unless="$(arg sim)" />
+    <include file="$(find pick_and_place_env)/launch/planning_context.launch" >
+        <arg name="load_robot_description" value="true" />
+    </include>
+
+    <!-- run the robot simulator and action interface nodes -->
+    <group if="$(arg sim)">
+        <include file="$(find industrial_robot_simulator)/launch/robot_interface_simulator.launch" />
+    </group>
+    <!-- run the "real robot" interface nodes -->
+    <!-- this typically includes: robot_state, motion_interface, and joint_trajectory_action nodes -->
+    <!-- replace these calls with appropriate robot-specific calls or launch files -->
+    <group unless="$(arg sim)">
+        <include file="$(find abb_irb1200_support)/launch/robot_interface_download_irb1200_5_90.launch" >
+            <arg name="robot_ip" value="$(arg robot_ip)"/>
+        </include>
+    </group>
+    
+    <!-- publish the robot state (tf transforms) -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+    <include file="$(find abb_irb1200_5_90_moveit_config)/launch/move_group.launch">
+        <arg name="publish_monitored_planning_scene" value="true" />
+    </include>
+
+    <!-- Launch files related to the PhoXi 3D Scanner -->
+    <include file="$(find phoxi_camera)/launch/phoxi_camera.launch"/>
+
+    <!-- Launch MoveIt and Rviz config  -->
+    <include file="$(find abb_irb1200_5_90_moveit_config)/launch/moveit_rviz.launch">
+        <arg name="config" value="true"/>
+    </include>
+</launch>

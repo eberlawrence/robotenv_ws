@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find abb_resources)/urdf/common_materials.xacro"/>
+  <xacro:include filename="$(find pick_and_place_env)/urdf/colours/colours.xacro"/>
+  <xacro:include filename="$(find pick_and_place_env)/urdf/colours/specific_colours.xacro"/>
+  <xacro:macro name="two_finger_gripper">
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!-- Gripper link list -->
+    <link name="link_flange_1">
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/visual/Flange_01.dae" scale = "0.01 0.01 0.01"/>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/collision/Flange_01Collision.stl" scale = "0.001 0.001 0.001"/>
+        </geometry>
+        <xacro:collision_colour />
+      </collision>
+      <inertial>
+        <mass value="0.137"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+    </link>
+    <link name="link_flange_2">
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/visual/Flange_02.dae" scale = "0.01 0.01 0.01"/>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/collision/Flange_02Collision.stl" scale = "0.001 0.001 0.001"/>
+        </geometry>
+        <xacro:collision_colour />
+      </collision>
+      <inertial>
+        <mass value="0.137"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+    </link>
+    <link name="link_tool_base">
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/visual/PB-0013_Base.dae" scale = "0.01 0.01 0.01"/>
+        </geometry>
+        <xacro:colour_gray_20p />
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/collision/PB-0013BaseCollision.stl" scale = "0.001 0.001 0.001"/>
+        </geometry>
+        <xacro:collision_colour />
+      </collision>
+      <inertial>
+        <mass value="0.137"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+    </link>
+    <link name="link_l_finger">
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/visual/PB-0013_Left.dae" scale = "0.01 0.01 0.01"/>
+        </geometry>
+        <xacro:colour_gray_40p />
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/collision/PB-0013LeftCollision.stl" scale = "0.001 0.001 0.001"/>
+        </geometry>
+        <xacro:collision_colour />
+      </collision>
+      <inertial>
+        <mass value="0.137"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+    </link>
+    <link name="link_r_finger">
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/visual/PB-0013_Right.dae" scale = "0.01 0.01 0.01"/>
+        </geometry>
+        <xacro:colour_gray_40p />
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/collision/PB-0013RightCollision.stl" scale = "0.001 0.001 0.001"/>
+        </geometry>
+        <xacro:collision_colour />
+      </collision>
+      <inertial>
+        <mass value="0.137"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+    </link>
+    <!-- End of gripper link list -->
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!-- Gripper joint list -->
+    <joint type="fixed" name="joint_flange_1">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="tool0"/>
+      <child link="link_flange_1"/>
+    </joint>
+    <joint type="fixed" name="joint_flange_2">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="link_flange_1"/>
+      <child link="link_flange_2"/>
+    </joint>
+    <joint type="fixed" name="joint_tool_base">
+      <origin xyz="0 0 0.116" rpy="${pi} 0 ${pi/2}"/>
+      <parent link="link_flange_2"/>
+      <child link="link_tool_base"/>
+    </joint>
+    <joint type="fixed" name="joint_l_finger">
+      <origin xyz="-0.0105 0 -0.029" rpy="${pi/2} -${(15*pi)/180} ${pi}"/>
+      <limit effort="20" lower="-${(15*pi)/180}" upper="0.0" velocity="0.2"/>
+      <axis xyz="0 0 1" />
+      <parent link="link_tool_base"/>
+      <child link="link_l_finger"/>
+    </joint>
+    <joint type="fixed" name="joint_r_finger">
+      <origin xyz="0.0105 0 -0.029" rpy="${pi/2} -${(15*pi)/180} 0"/>
+      <limit effort="20" lower="0.0" upper="0.0" velocity="0.2"/>
+      <axis xyz="0 0 1" />
+      <parent link="link_tool_base"/>
+      <child link="link_r_finger"/>
+      <!-- <mimic joint="joint_l_finger" /> -->
+    </joint>
+    <!-- End of gripper joint list -->
+    <!--  -->
+    <!--  -->
+    <!--  -->
+  </xacro:macro>
+</robot>

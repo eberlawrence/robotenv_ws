@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find abb_resources)/urdf/common_materials.xacro"/>
+  <xacro:include filename="$(find pick_and_place_env)/urdf/colours/colours.xacro"/>
+  <xacro:macro name="calibration_tool">
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!-- Gripper link list -->
+    <link name="link_flange_1">
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/visual/Flange_01.dae" scale = "0.01 0.01 0.01"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 ${radians(90)} 0"/>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/collision/Flange_01Collision.stl" scale = "0.001 0.001 0.001"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 ${radians(90)} 0"/>
+        <xacro:collision_colour />
+      </collision>
+      <inertial>
+        <mass value="0.137"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+    </link>
+    <link name="link_calib_tool_socket">
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/visual/Calib_tool_socket.dae" scale = "0.01 0.01 0.01"/>
+        </geometry>
+        <origin xyz="-0.07 0 0" rpy="0 ${radians(90)} 0"/>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/collision/Calib_tool_socketCollision.stl" scale = "0.001 0.001 0.001"/>
+        </geometry>
+        <origin xyz="-0.07 0 0" rpy="0 ${radians(90)} 0"/>
+        <xacro:collision_colour />
+      </collision>
+      <inertial>
+        <mass value="0.137"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+    </link>
+    <link name="link_calib_tool">
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/visual/Calib_tool.dae" scale = "0.01 0.01 0.01"/>
+        </geometry>
+        <origin xyz="-0.174538 0 0" rpy="0 ${radians(90)} 0"/>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://pick_and_place_env/meshes/collision/Calib_toolCollision.stl" scale = "0.001 0.001 0.001"/>
+        </geometry>
+        <origin xyz="-0.174538 0 0" rpy="0 ${radians(90)} 0"/>
+        <xacro:collision_colour />
+      </collision>
+      <inertial>
+        <mass value="0.137"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+    </link>
+    <!-- End of gripper link list -->
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!-- Gripper joint list -->
+    <joint type="fixed" name="joint_flange_1">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="tool0"/>
+      <child link="link_flange_1"/>
+    </joint>
+    <joint type="fixed" name="joint_calib_tool_socket">
+      <origin xyz="0.07 0 0" rpy="0 0 0"/>
+      <parent link="link_flange_1"/>
+      <child link="link_calib_tool_socket"/>
+    </joint>
+    <joint type="fixed" name="joint_calib_tool">
+      <origin xyz="0.104538 0 0" rpy="0 0 0"/>
+      <parent link="link_calib_tool_socket"/>
+      <child link="link_calib_tool"/>
+    </joint>
+    <!-- End of gripper joint list -->
+    <!--  -->
+    <!--  -->
+    <!--  -->
+  </xacro:macro>
+</robot>

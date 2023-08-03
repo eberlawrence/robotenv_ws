@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- Colours -->
+  <xacro:property name="c_black"        value="0 0 0 1" />
+  <xacro:property name="c_blue"         value="0 0 1 1" />
+  <xacro:property name="c_green"        value="0 1 0 1" />
+  <xacro:property name="c_light_blue"   value="0 1 1 1" />
+  <xacro:property name="c_red"          value="1 0 0 1" />
+  <xacro:property name="c_pink"         value="1 0 1 1" />
+  <xacro:property name="c_yellow"       value="1 1 0 1" />
+  <xacro:property name="c_white"        value="1 1 1 1" />
+  <xacro:property name="c_orange"       value="1 .5 0 1" />
+  <xacro:property name="c_light_yellow" value="1 1 .5 1" />
+  <xacro:property name="c_light_green"  value="1 .5 0 1" />
+  <xacro:property name="c_gray_10p"     value="0.1 0.1 0.1 1" />
+  <xacro:property name="c_gray_20p"     value="0.2 0.2 0.2 1" />
+  <xacro:property name="c_gray_30p"     value="0.3 0.3 0.3 1" />
+  <xacro:property name="c_gray_40p"     value="0.4 0.4 0.4 1" />
+  <xacro:property name="c_gray_50p"     value="0.5 0.5 0.5 1" />
+  <xacro:property name="c_gray_60p"     value="0.6 0.6 0.6 1" />
+  <xacro:property name="c_gray_70p"     value="0.7 0.7 0.7 1" />
+  <xacro:property name="c_gray_80p"     value="0.8 0.8 0.8 1" />
+  <xacro:property name="c_gray_90p"     value="0.9 0.9 0.9 1" />
+  <xacro:property name="c_dark_green"     value="0 0.5 0 1" />
+</robot>
